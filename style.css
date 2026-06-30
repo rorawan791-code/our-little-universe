@@ -104,3 +104,30 @@ body::before{
 button{
     margin-top:25px;
 }
+/* ===== Love Section ===== */
+
+.love-section{
+    margin:70px 0;
+    text-align:center;
+}
+
+#love-heart{
+    font-size:90px;
+    cursor:pointer;
+    animation:heartbeat 1.2s infinite;
+    user-select:none;
+}
+
+@keyframes heartbeat{
+
+0%{transform:scale(1);}
+50%{transform:scale(1.15);}
+100%{transform:scale(1);}
+
+}
+
+#love-message{
+    margin-top:20px;
+    font-size:22px;
+    color:#ffd6e7;
+}
