@@ -26,3 +26,33 @@ body::before{
   radial-gradient(2px 2px at 120px 160px,#fff,transparent),
   radial-gradient(2px 2px at 250px 70px,#fff,transparent),
   radial-gradient(2px 2px at 420
+    /* ===== Our Little Universe V2 ===== */
+
+.container{
+    width:90%;
+    max-width:900px;
+    padding:30px;
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+    backdrop-filter:blur(15px);
+    border-radius:30px;
+    box-shadow:0 0 40px rgba(255,255,255,.08);
+}
+
+.container::before{
+    content:"✨";
+    position:absolute;
+    top:-15px;
+    right:25px;
+    font-size:28px;
+    animation:floatStar 3s ease-in-out infinite;
+}
+
+@keyframes floatStar{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-8px);
+    }
+}              
