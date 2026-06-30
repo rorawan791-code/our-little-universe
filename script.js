@@ -41,3 +41,41 @@ function updateCounters() {
 }
 
 updateCounters();
+// ===== Love Messages =====
+
+const loveMessages = [
+
+"I'm proud of you.",
+
+"You're my safe place.",
+
+"I miss you.",
+
+"I love you more than words can say.",
+
+"You have my whole heart.",
+
+"My home is wherever you are.",
+
+"Thank you for choosing me.",
+
+"You make my world a better place.",
+
+"You are my forever and always.",
+
+"Can't wait to be yours ❤️"
+
+];
+
+const heart = document.getElementById("love-heart");
+const message = document.getElementById("love-message");
+
+heart.onclick = function(){
+
+const random =
+Math.floor(Math.random()*loveMessages.length);
+
+message.innerHTML =
+loveMessages[random];
+
+};
