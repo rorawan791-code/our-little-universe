@@ -91,3 +91,18 @@ document.getElementById("musicBtn").onclick = function () {
 const audio = document.getElementById("song");
 audio.play();
 };
+const musicBtn = document.getElementById("musicBtn");
+const song = document.getElementById("song");
+
+let isPlaying = false;
+
+musicBtn.onclick = function () {
+    if (!isPlaying) {
+        song.play();
+        musicBtn.innerHTML = "⏸ Pause Song";
+    } else {
+        song.pause();
+        musicBtn.innerHTML = "🎵 Our Song";
+    }
+    isPlaying = !isPlaying;
+};
