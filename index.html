@@ -1,69 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Our Little Universe ❤️</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Little Universe ❤️</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<!-- ===== OUR TIME ===== -->
-<section class="our-time">
-<h2>⏳ Our Time</h2>
+    <section class="our-time">
+        <h2>⏳ Our Time</h2>
+        <div class="time-card">
+            <h3>❤️ Engaged Since</h3>
+            <p>24 January 2025</p>
+        </div>
+        <div class="time-card">
+            <h3>💍 Wedding Day</h3>
+            <p>28 August 2026</p>
+        </div>
+    </section>
 
-<div class="time-card">
-<h3>❤️ Engaged Since</h3>
-<p>24 January 2025</p>
-</div>
+    <div class="container">
+        <h1>🌌 Our Little Universe ❤️</h1>
+        <p>Every star holds a memory. Every memory leads back to us.</p>
+        <button id="enterBtn">Enter Our Universe</button>
+    </div>
 
-<div class="time-card">
-<h3>💍 Wedding Day</h3>
-<p>28 August 2026</p>
-</div>
-</section>
+    <section class="love-section">
+        <div id="love-heart">❤️</div>
+        <div id="love-message">Tap the heart…</div>
+        <div id="achievement"></div>
+    </section>
 
-<!-- ===== MAIN UNIVERSE ===== -->
-<div class="container">
+    <section class="planet-section">
+        <h2>🌍 Our Universe</h2>
+        <div class="planet-card">
+            <h3 id="rusticaBtn">Planet Rustica</h3>
+            <p>Tap to explore memory</p>
+        </div>
+    </section>
 
-<h1>🌌 Our Little Universe ❤️</h1>
-<p>Every star holds a memory. Every memory leads back to us.</p>
+    <div id="hidden-star">✨</div>
 
-<button id="enterBtn">Enter Our Universe</button>
+    <section class="music-section">
+        <button id="musicBtn">🎵 Our Song</button>
+        <audio id="song" src="song.mp3"></audio>
+    </section>
 
-</div>
-
-<!-- ===== HEART SECTION ===== -->
-<section class="love-section">
-
-<div id="love-heart">❤️</div>
-<div id="love-message">Tap the heart…</div>
-
-<div id="achievement"></div>
-</section>
-
-<!-- ===== PLANET ===== -->
-<section class="planet-section">
-
-<h2>🌍 Our Universe</h2>
-
-<div class="planet-card">
-<h3 id="rusticaBtn">Planet Rustica</h3>
-<p>Tap to explore memory</p>
-</div>
-
-</section>
-
-<!-- ===== HIDDEN STAR ===== -->
-<div id="hidden-star">✨</div>
-
-<!-- ===== MUSIC ===== -->
-<section class="music-section">
-<button id="musicBtn">🎵 Our Song</button>
-<audio id="song" src="song.mp3"></audio>
-</section>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
