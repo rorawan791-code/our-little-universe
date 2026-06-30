@@ -75,7 +75,27 @@ heart.onclick = function(){
 const random =
 Math.floor(Math.random()*loveMessages.length);
 
-message.innerHTML =
+me// ===== Planet Rustica =====
+
+document
+.getElementById("rusticaBtn")
+.onclick=function(){
+
+alert(
+
+`☕
+
+Rustica Cafe
+
+One of my happiest birthdays...
+
+because you were there.
+
+❤️`
+
+);
+
+};ssage.innerHTML =
 loveMessages[random];
 
 };
