@@ -1,85 +1,16 @@
-// ===== ENTER BUTTON =====
-document.getElementById("enterBtn").onclick = function () {
-this.innerHTML = "❤️ Welcome Home ❤️";
-document.body.style.background =
-"linear-gradient(180deg,#030712,#0f1f52,#29124d)";
-};
-
-// ===== COUNTERS =====
-const engagedDate = new Date("2025-01-24");
-const weddingDate = new Date("2026-08-28");
-
-function updateCounters() {
-const today = new Date();
-
-const engagedDays = Math.floor((today - engagedDate)/(1000*60*60*24));
-const weddingDays = Math.floor((weddingDate - today)/(1000*60*60*24));
-
-const cards = document.querySelectorAll(".time-card");
-
-cards[0].querySelector("p").innerHTML =
-`24 January 2025<br>${engagedDays} days together ❤️`;
-
-cards[1].querySelector("p").innerHTML =
-`28 August 2026<br>${weddingDays} days left 💍`;
-}
-
-updateCounters();
-
-// ===== LOVE HEART =====
-const loveMessages = [
-"I'm proud of you.",
-"You're my safe place.",
-"I miss you.",
-"I love you more than words can say.",
-"You are my forever ❤️"
-];
-
-const heart = document.getElementById("love-heart");
-const message = document.getElementById("love-message");
-const achievement = document.getElementById("achievement");
-
-let count = 0;
-
-heart.onclick = function () {
-
-const random = Math.floor(Math.random()*loveMessages.length);
-message.innerHTML = loveMessages[random];
-
-count++;
-
-if(count % 25 === 0){
-achievement.innerHTML = "🏆 Achievement Unlocked: Love Explorer ❤️";
-}
-
-if(count === 100){
-achievement.innerHTML = "You really miss me that much, huh? 🤍";
-}
-};
-
-// ===== PLANET RUSTICA =====
-document.getElementById("rusticaBtn").onclick = function () {
-    document.getElementById("rusticaPopup").style.display = "flex";
-};
-
-document.getElementById("closeRustica").onclick = function () {
-    document.getElementById("rusticaPopup").style.display = "none";
-};
-
-// ===== HIDDEN STAR =====
-
+// ===== HIDDEN STAR (SECRET LETTER) =====
 const hiddenStar = document.getElementById("hidden-star");
-const secretLetter = document.getElementById("secretLetter");
-const closeLetter = document.getElementById("closeLetter");
+const secretLetter = document.getElementById("secret-letter"); // تأكدي أن الـ ID مطابق للـ HTML
 const letterText = document.getElementById("letterText");
+const closeLetter = document.getElementById("closeLetter");
 
 hiddenStar.onclick = function () {
-
     letterText.textContent = "";
     letterText.style.whiteSpace = "pre-line";
     secretLetter.style.display = "flex";
 
-    const text = `هاي زوجي المستقبلي و حبيب عيوني
+    // النص فقط هو اللي جوه الـ backticks
+    const text = `هاي زوجي المستقبلي و حبيب عيوني 
 
 بكتبلك الكلام ده وأنا عارفة إننا الاتنين مطحونين، وبقالنا فترة كلامنا ومكالماتنا كلها عبارة عن (جبت إيه؟، ناقص إيه؟، المشوار الفلاني هنعمل فيه إيه؟)
 
@@ -113,40 +44,44 @@ can't wait to be yours...
 
 Your woman 🫂`;
 
+    // الكود ده برة الـ backticks وبيشتغل ككود عادي سليم 100%
     clearInterval(window.typingInterval);
-
     let i = 0;
-
-    window.typingInterval = setInterval(function(){
-
+    window.typingInterval = setInterval(function() {
         letterText.textContent += text.charAt(i);
-
         i++;
-
-        if(i >= text.length){
+        if (i >= text.length) {
             clearInterval(window.typingInterval);
         }
-
-    }, 40);
-
+    }, 40); 
 };
 
+// قفل الرسالة عند الضغط على زرار الاكس
 closeLetter.onclick = function () {
     clearInterval(window.typingInterval);
     secretLetter.style.display = "none";
 };
 
-secretLetter.onclick = function(event){
-    if(event.target === secretLetter){
+// قفل الرسالة عند الضغط في أي مكان فاضي برة صندوق الرسالة
+secretLetter.onclick = function(event) {
+    if (event.target === secretLetter) {
         clearInterval(window.typingInterval);
         secretLetter.style.display = "none";
     }
 };
 
-// ===== MUSIC =====
+// ===== PLANET RUSTICA POPUP =====
+const rusticaPopup = document.getElementById("rusticaPopup");
+
+rusticaPopup.onclick = function(event) {
+    if (event.target === rusticaPopup) {
+        rusticaPopup.style.display = "none";
+    }
+};
+
+// ===== MUSIC PLAYER =====
 const musicBtn = document.getElementById("musicBtn");
 const song = document.getElementById("song");
-
 let isPlaying = false;
 
 musicBtn.onclick = function () {
@@ -160,10 +95,22 @@ musicBtn.onclick = function () {
     isPlaying = !isPlaying;
 };
 
-const rusticaPopup = document.getElementById("rusticaPopup");
+// ===== SLIDES NAVIGATION (Next Button) =====
+let currentSlide = 0;
+const slides = document.querySelectorAll(".slide");
 
-rusticaPopup.onclick = function(event) {
-    if (event.target === rusticaPopup) {
-        rusticaPopup.style.display = "none";
-    }
+function showSlide(index) {
+    slides.forEach(s => s.style.display = "none");
+    slides[index].style.display = "block";
+}
+
+document.getElementById("nextBtn").onclick = function() {
+    currentSlide++;
+    if (currentSlide >= slides.length) { 
+        currentSlide = 0; 
+    } 
+    showSlide(currentSlide); 
 };
+
+// تشغيل السلايد الأولى أول ما الصفحة تفتح
+showSlide(0);
