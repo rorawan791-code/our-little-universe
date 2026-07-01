@@ -102,3 +102,10 @@ musicBtn.onclick = function () {
     }
     isPlaying = !isPlaying;
 };
+const rusticaPopup = document.getElementById("rusticaPopup");
+
+rusticaPopup.onclick = function(event) {
+    if (event.target === rusticaPopup) {
+        rusticaPopup.style.display = "none";
+    }
+};
