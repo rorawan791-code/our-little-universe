@@ -111,3 +111,18 @@ font-size:15px;
 color:#ffb3d9;
 font-weight:bold;
 }
+/* NEW SECRET STAR */
+#hidden-star2{
+position:absolute;
+bottom:18%;
+left:8%;
+font-size:18px;
+opacity:0.4;
+cursor:pointer;
+transition:0.3s;
+}
+
+#hidden-star2:hover{
+opacity:1;
+transform:scale(1.2);
+}
