@@ -3,6 +3,7 @@ const slides = document.querySelectorAll(".slide");
 const nextBtn = document.getElementById("nextBtn");
 
 const starSound = new Audio("magic.mp3");
+const kissSound = new Audio("kiss.mp3");
 
 function showSlide(i){
     slides.forEach(s=>s.style.display="none");
@@ -127,6 +128,33 @@ popup.onclick = (event)=>{
     if(event.target===popup){
         clearInterval(window.typingInterval);
         popup.style.display="none";
+    }
+};
+
+// ===== SECRET STAR 2 =====
+const star2 = document.getElementById("hidden-star2");
+const popup2 = document.getElementById("secretStar2");
+const closeStar2 = document.getElementById("closeStar2");
+
+star2.onclick = ()=>{
+
+    kissSound.currentTime = 0;
+    kissSound.play().catch(()=>{});
+
+    popup2.style.display = "flex";
+
+    popup2.querySelector("p").innerHTML =
+    "🙈 Congratulations! Secret star found!<br>Your reward: one kiss... no refunds. 😂❤️";
+
+};
+
+closeStar2.onclick = ()=>{
+    popup2.style.display = "none";
+};
+
+popup2.onclick = (event)=>{
+    if(event.target===popup2){
+        popup2.style.display="none";
     }
 };
 
