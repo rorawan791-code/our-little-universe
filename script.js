@@ -1,6 +1,6 @@
 // ===== HIDDEN STAR (SECRET LETTER) =====
 const hiddenStar = document.getElementById("hidden-star");
-const secretLetter = document.getElementById("secret-letter"); // تأكدي أن الـ ID مطابق للـ HTML
+const secretLetter = document.getElementById("secretLetter"); // تم الإصلاح ليتطابق مع الـ HTML
 const letterText = document.getElementById("letterText");
 const closeLetter = document.getElementById("closeLetter");
 
@@ -9,7 +9,7 @@ hiddenStar.onclick = function () {
     letterText.style.whiteSpace = "pre-line";
     secretLetter.style.display = "flex";
 
-    // النص فقط هو اللي جوه الـ backticks
+    // النص النقي فقط داخل الـ backticks
     const text = `هاي زوجي المستقبلي و حبيب عيوني 
 
 بكتبلك الكلام ده وأنا عارفة إننا الاتنين مطحونين، وبقالنا فترة كلامنا ومكالماتنا كلها عبارة عن (جبت إيه؟، ناقص إيه؟، المشوار الفلاني هنعمل فيه إيه؟)
@@ -44,15 +44,15 @@ can't wait to be yours...
 
 Your woman 🫂`;
 
-    // الكود ده برة الـ backticks وبيشتغل ككود عادي سليم 100%
-    clearInterval(window.typingInterval);
-    let i = 0;
-    window.typingInterval = setInterval(function() {
-        letterText.textContent += text.charAt(i);
-        i++;
-        if (i >= text.length) {
-            clearInterval(window.typingInterval);
-        }
+    // تم إخراج الكود البرمجي برا النص ليعمل بشكل سليم بنسبة 100%
+    clearInterval(window.typingInterval); 
+    let i = 0; 
+    window.typingInterval = setInterval(function() { 
+        letterText.textContent += text.charAt(i); 
+        i++; 
+        if (i >= text.length) { 
+            clearInterval(window.typingInterval); 
+        } 
     }, 40); 
 };
 
@@ -71,8 +71,21 @@ secretLetter.onclick = function(event) {
 };
 
 // ===== PLANET RUSTICA POPUP =====
+const rusticaBtn = document.getElementById("rusticaBtn");
 const rusticaPopup = document.getElementById("rusticaPopup");
+const closeRustica = document.getElementById("closeRustica");
 
+// فتح بوب أب كوكب رستم عند الضغط على الكارت (تمت إضافته لأنه كان ناقصاً)
+rusticaBtn.onclick = function() {
+    rusticaPopup.style.display = "flex";
+};
+
+// إغلاق بوب أب رستم عند الضغط على زر X
+closeRustica.onclick = function() {
+    rusticaPopup.style.display = "none";
+};
+
+// قفل البوب أب عند الضغط بالخارج
 rusticaPopup.onclick = function(event) {
     if (event.target === rusticaPopup) {
         rusticaPopup.style.display = "none";
@@ -86,30 +99,45 @@ let isPlaying = false;
 
 musicBtn.onclick = function () {
     if (!isPlaying) {
-        song.play();
+        song.play().catch(error => console.log("Audio play blocked by browser setup."));
         musicBtn.innerHTML = "⏸ Pause Song";
     } else {
         song.pause();
-        musicBtn.innerHTML = "🎵 Our Song";
+        musicBtn.innerHTML = "▶ Play"; // تعديل النص ليكون متناسقاً
     }
     isPlaying = !isPlaying;
 };
 
-// ===== SLIDES NAVIGATION (Next Button) =====
+// ===== SLIDES NAVIGATION =====
 let currentSlide = 0;
 const slides = document.querySelectorAll(".slide");
+const nextBtn = document.getElementById("nextBtn");
+const enterBtn = document.getElementById("enterBtn");
 
 function showSlide(index) {
     slides.forEach(s => s.style.display = "none");
-    slides[index].style.display = "block";
+    slides[index].style.display = "flex"; // تم تعديله لـ flex ليتناسب مع تصميم التوسط في CSS
+    
+    // إخفاء زر التالي في الصفحة الأولى وإظهاره في الباقي
+    if (index === 0) {
+        nextBtn.style.display = "none";
+    } else {
+        nextBtn.style.display = "block";
+    }
 }
 
-document.getElementById("nextBtn").onclick = function() {
+// تشغيل زر الدخول في الصفحة الأولى
+enterBtn.onclick = function() {
+    currentSlide = 1;
+    showSlide(currentSlide);
+};
+
+nextBtn.onclick = function() {
     currentSlide++;
-    if (currentSlide >= slides.length) { 
-        currentSlide = 0; 
-    } 
-    showSlide(currentSlide); 
+    if (currentSlide >= slides.length) {
+        currentSlide = 0;
+    }
+    showSlide(currentSlide);
 };
 
 // تشغيل السلايد الأولى أول ما الصفحة تفتح
