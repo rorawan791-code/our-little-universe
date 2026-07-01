@@ -61,3 +61,38 @@ musicBtn.onclick = ()=>{
         musicBtn.textContent="▶ Play";
     }
 };
+// ===== COUNTDOWN =====
+
+function updateCountdown(){
+
+const now = new Date();
+
+const engagedDate = new Date("2025-01-24T00:00:00");
+const weddingDate = new Date("2026-08-28T00:00:00");
+
+// منذ الخطوبة
+let diff1 = now - engagedDate;
+
+let days1 = Math.floor(diff1/(1000*60*60*24));
+let hours1 = Math.floor((diff1/(1000*60*60))%24);
+let mins1 = Math.floor((diff1/(1000*60))%60);
+let secs1 = Math.floor((diff1/1000)%60);
+
+document.getElementById("engagedCountdown").textContent =
+`${days1} Days ${hours1} Hours ${mins1} Minutes ${secs1} Seconds`;
+
+// المتبقي للزفاف
+let diff2 = weddingDate - now;
+
+let days2 = Math.floor(diff2/(1000*60*60*24));
+let hours2 = Math.floor((diff2/(1000*60*60))%24);
+let mins2 = Math.floor((diff2/(1000*60))%60);
+let secs2 = Math.floor((diff2/1000)%60);
+
+document.getElementById("weddingCountdown").textContent =
+`${days2} Days ${hours2} Hours ${mins2} Minutes ${secs2} Seconds`;
+
+}
+
+updateCountdown();
+setInterval(updateCountdown,1000);
