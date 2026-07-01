@@ -135,3 +135,16 @@ color:#ffb3d9;
     margin:0 auto 15px;
     display:block;
 }
+.close-popup{
+    position:absolute;
+    top:15px;
+    right:20px;
+    font-size:28px;
+    cursor:pointer;
+    color:white;
+    transition:0.3s;
+}
+
+.close-popup:hover{
+    color:#ff9ac5;
+}
