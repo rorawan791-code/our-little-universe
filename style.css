@@ -185,3 +185,22 @@ color:#ffb3d9;
 .time-card, .planet-card, .song-card {
     box-shadow: 0 10px 30px rgba(0,0,0,0.35);
 }
+.slide{
+    display:none;
+    min-height:100vh;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+#nextBtn{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    padding:10px 15px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    background:#ff9ac5;
+    color:#111;
+}
