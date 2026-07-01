@@ -59,11 +59,11 @@ achievement.innerHTML = "You really miss me that much, huh? 🤍";
 
 // ===== PLANET RUSTICA =====
 document.getElementById("rusticaBtn").onclick = function () {
-alert(`☕ Planet Rustica
+    document.getElementById("rusticaPopup").style.display = "flex";
+};
 
-One of our happiest memories...
-
-❤️`);
+document.getElementById("closeRustica").onclick = function () {
+    document.getElementById("rusticaPopup").style.display = "none";
 };
 
 // ===== HIDDEN STAR =====
@@ -87,10 +87,6 @@ if(i >= text.length) clearInterval(interval);
 };
 
 // ===== MUSIC =====
-document.getElementById("musicBtn").onclick = function () {
-const audio = document.getElementById("song");
-audio.play();
-};
 const musicBtn = document.getElementById("musicBtn");
 const song = document.getElementById("song");
 
