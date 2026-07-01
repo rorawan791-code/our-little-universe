@@ -1,102 +1,85 @@
-// ===== HIDDEN STAR (SECRET LETTER) =====
-const hiddenStar = document.getElementById("hidden-star");
-const secretLetter = document.getElementById("secretLetter");
-const letterText = document.getElementById("letterText");
-const closeLetter = document.getElementById("closeLetter");
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Little Universe ❤️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-hiddenStar.onclick = function () {
+    <div class="slide">
+        <div class="container">
+            <h1>🌌 Our Little Universe ❤️</h1>
+            <p>Every star holds a memory. Every memory leads back to us.</p>
+            <button id="enterBtn">Enter Our Universe</button>
+        </div>
+    </div>
 
-    letterText.textContent = "";
-    letterText.style.whiteSpace = "pre-line";
-    secretLetter.style.display = "flex";
+    <div class="slide">
+        <section class="our-time">
+            <h2>⏳ Our Time</h2>
+            <div class="time-card">
+                <h3>❤️ Engaged Since</h3>
+                <p>24 January 2025</p>
+            </div>
+            <div class="time-card">
+                <h3>💍 Wedding Day</h3>
+                <p>28 August 2026</p>
+            </div>
+        </section>
+    </div>
 
-    const text = `هاي زوجي المستقبلي و حبيب عيوني
+    <div class="slide">
+        <section class="love-section">
+            <div id="love-heart">❤️</div>
+            <div id="love-message">Tap the heart…</div>
+            <div id="achievement"></div>
+        </section>
+    </div>
 
-بكتبلك الكلام ده وأنا عارفة إننا الاتنين مطحونين...
+    <div class="slide">
+        <section class="planet-section">
+            <h2>🌍 Our Universe</h2>
+            <div class="planet-card" id="rusticaBtn">
+                <h3>🌍 Planet Rustica</h3>
+                <p>Tap to explore memory</p>
+            </div>
+        </section>
 
-I love you baby,
-can't wait to be yours...
+        <div id="hidden-star">⭐</div>
+    </div>
 
-Your woman 🫂`;
+    <div class="slide">
+        <section class="music-section">
+            <h2>🎵 Our Song</h2>
+            <div class="song-card">
+                <img src="song.jpg" class="song-img">
+                <h3>🎧 Die With A Smile</h3>
+                <p>Our memory in one song</p>
+                <button id="musicBtn">▶ Play</button>
+                <audio id="song" src="song.mp3"></audio>
+            </div>
+        </section>
+    </div>
 
-    clearInterval(window.typingInterval);
+    <button id="nextBtn">Next ➡️</button>
 
-    let i = 0;
+    <div id="secretLetter" class="popup">
+        <div class="popup-content">
+            <span id="closeLetter" class="close-popup">✕</span>
+            <p id="letterText"></p>
+        </div>
+    </div>
 
-    window.typingInterval = setInterval(function () {
+    <div id="rusticaPopup" class="popup">
+        <div class="popup-content">
+            <span id="closeRustica" class="close-popup">✕</span>
+            <img src="rustica.webp">
+            <h2>☕ Planet Rustica</h2>
+        </div>
+    </div>
 
-        letterText.textContent += text.charAt(i);
-
-        i++;
-
-        if (i >= text.length) {
-            clearInterval(window.typingInterval);
-        }
-
-    }, 40);
-};
-
-
-// ===== CLOSE SECRET LETTER =====
-closeLetter.onclick = function () {
-    clearInterval(window.typingInterval);
-    secretLetter.style.display = "none";
-};
-
-secretLetter.onclick = function (event) {
-    if (event.target === secretLetter) {
-        clearInterval(window.typingInterval);
-        secretLetter.style.display = "none";
-    }
-};
-
-
-// ===== RUSTICA POPUP =====
-const rusticaPopup = document.getElementById("rusticaPopup");
-
-rusticaPopup.onclick = function (event) {
-    if (event.target === rusticaPopup) {
-        rusticaPopup.style.display = "none";
-    }
-};
-
-
-// ===== MUSIC PLAYER =====
-const musicBtn = document.getElementById("musicBtn");
-const song = document.getElementById("song");
-
-let isPlaying = false;
-
-musicBtn.onclick = function () {
-    if (!isPlaying) {
-        song.play();
-        musicBtn.innerHTML = "⏸ Pause Song";
-    } else {
-        song.pause();
-        musicBtn.innerHTML = "▶ Play";
-    }
-    isPlaying = !isPlaying;
-};
-
-
-// ===== SLIDES SYSTEM =====
-let currentSlide = 0;
-const slides = document.querySelectorAll(".slide");
-
-function showSlide(index) {
-    slides.forEach(s => s.style.display = "none");
-    slides[index].style.display = "block";
-}
-
-document.getElementById("nextBtn").onclick = function () {
-    currentSlide++;
-
-    if (currentSlide >= slides.length) {
-        currentSlide = 0;
-    }
-
-    showSlide(currentSlide);
-};
-
-// أول تشغيل
-showSlide(0);
+    <script src="script.js"></script>
+</body>
+</html>
