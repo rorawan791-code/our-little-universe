@@ -38,19 +38,9 @@ let messages = [
 "I miss you more than words can say.",
 "Life is so much better with you in it.",
 "No matter where I go, the closest place is always next to you.",
-"You occupy my mind more than my own thoughts do.",
-"Holding your hand is how I want to spend my forever.",
-"You are my everything.",
-"Forever isn't long enough with you.",
-"My love for you grows every single day.",
-"You have my whole heart for my whole life.",
-"Home is wherever you are.",
-"Still falling for you every day.",
-"Good morning to the person who makes every day bright.",
-"You are the first thought in my morning and the last one at night.",
-"Dreaming of you is my favorite way to sleep.",
-"I hope your day is as beautiful as your smile.",
-"Can't wait to fall asleep in your arms again.",
+"Stop clicking me 😭 I'm shy.",
+"You again? 😳",
+"Ok ok I still love you 😂",
 "May your dreams be as sweet as you are. Goodnight."
 ];
 
@@ -83,7 +73,7 @@ star.onclick = ()=>{
 
 أنا عارفة ومقدرة التعب والضغط اللي أنت فيه الفترة دي وشايفة كل مجهود بتعمله عشان بيتنا يطلع حلو وعشان نكون سوا. أنا بجد فخورة بيك وبمشاويرك وتعبك وممتنة لكل خطوة بتتعب فيها علشاني وعلشان مستقبلنا حتى لو بسبب الضغط مش بعرف أعبر عن ده.
 
-عارف؟ في وسط خناقاتنا وااختلافاتنا الصغيرة بتاعة التجهيزات، بفتكر إن شهرين وكل الدوشة دي تخلص والباب يتقفل علينا...
+عارف؟ في وسط خناقاتنا واختلافاتنا الصغيرة بتاعة التجهيزات، بفتكر إن شهرين وكل الدوشة دي تخلص والباب يتقفل علينا...
 
 and it's Worth it ❤️
 
@@ -166,32 +156,32 @@ musicBtn.onclick = ()=>{
 
 function updateCountdown(){
 
-const now = new Date();
+    const now = new Date();
 
-const engagedDate = new Date("2025-01-24T00:00:00");
-const weddingDate = new Date("2026-08-28T00:00:00");
+    const engagedDate = new Date("2025-01-24T00:00:00");
+    const weddingDate = new Date("2026-08-28T00:00:00");
 
-// منذ الخطوبة
-let diff1 = now - engagedDate;
+    // منذ الخطوبة
+    let diff1 = now - engagedDate;
 
-let days1 = Math.floor(diff1/(1000*60*60*24));
-let hours1 = Math.floor((diff1/(1000*60*60))%24);
-let mins1 = Math.floor((diff1/(1000*60))%60);
-let secs1 = Math.floor((diff1/1000)%60);
+    let days1 = Math.floor(diff1/(1000*60*60*24));
+    let hours1 = Math.floor((diff1/(1000*60*60))%24);
+    let mins1 = Math.floor((diff1/(1000*60))%60);
+    let secs1 = Math.floor((diff1/1000)%60);
 
-document.getElementById("engagedCountdown").textContent =
-`${days1} Days ${hours1} Hours ${mins1} Minutes ${secs1} Seconds`;
+    document.getElementById("engagedCountdown").textContent =
+    `${days1} Days ${hours1} Hours ${mins1} Minutes ${secs1} Seconds`;
 
-// المتبقي للزفاف
-let diff2 = weddingDate - now;
+    // المتبقي للزفاف
+    let diff2 = weddingDate - now;
 
-let days2 = Math.floor(diff2/(1000*60*60*24));
-let hours2 = Math.floor((diff2/(1000*60*60))%24);
-let mins2 = Math.floor((diff2/(1000*60))%60);
-let secs2 = Math.floor((diff2/1000)%60);
+    let days2 = Math.floor(diff2/(1000*60*60*24));
+    let hours2 = Math.floor((diff2/(1000*60*60))%24);
+    let mins2 = Math.floor((diff2/(1000*60))%60);
+    let secs2 = Math.floor((diff2/1000)%60);
 
-document.getElementById("weddingCountdown").textContent =
-`${days2} Days ${hours2} Hours ${mins2} Minutes ${secs2} Seconds`;
+    document.getElementById("weddingCountdown").textContent =
+    `${days2} Days ${hours2} Hours ${mins2} Minutes ${secs2} Seconds`;
 
 }
 
