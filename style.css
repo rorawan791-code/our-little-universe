@@ -101,6 +101,7 @@ color:#ffb3d9;
 }
 
 .popup-content{
+    position:relative;
     width:90%;
     max-width:500px;
     background:#111b3b;
@@ -115,14 +116,6 @@ color:#ffb3d9;
     object-fit:cover;
     border-radius:15px;
     margin-bottom:15px;
-}
-
-.popup-content button{
-    margin-top:15px;
-    padding:10px 20px;
-    border:none;
-    border-radius:10px;
-    cursor:pointer;
 }
 
 /* ===== music img ===== */
