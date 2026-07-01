@@ -67,23 +67,52 @@ document.getElementById("closeRustica").onclick = function () {
 };
 
 // ===== HIDDEN STAR =====
-document.getElementById("hidden-star").onclick = function () {
-let text = `We were never just a story...
+
+const hiddenStar = document.getElementById("hidden-star");
+const secretLetter = document.getElementById("secretLetter");
+const closeLetter = document.getElementById("closeLetter");
+const letterText = document.getElementById("letterText");
+
+hiddenStar.onclick = function () {
+
+    letterText.innerHTML = "";
+    secretLetter.style.display = "flex";
+
+    const text = `We were never just a story...
 we were a universe written in stars.
 
 I love you baby.
 Can't wait to be yours...
 Your woman 🫂`;
 
-let i = 0;
-let out = "";
+    clearInterval(window.typingInterval);
 
-let interval = setInterval(() => {
-out += text[i];
-document.getElementById("achievement").innerHTML = out;
-i++;
-if(i >= text.length) clearInterval(interval);
-}, 40);
+    let i = 0;
+
+    window.typingInterval = setInterval(function(){
+
+        letterText.innerHTML += text.charAt(i);
+
+        i++;
+
+        if(i >= text.length){
+            clearInterval(window.typingInterval);
+        }
+
+    },40);
+
+};
+
+closeLetter.onclick = function () {
+    clearInterval(window.typingInterval);
+    secretLetter.style.display = "none";
+};
+
+secretLetter.onclick = function(event){
+    if(event.target === secretLetter){
+        clearInterval(window.typingInterval);
+        secretLetter.style.display = "none";
+    }
 };
 
 // ===== MUSIC =====
@@ -102,6 +131,7 @@ musicBtn.onclick = function () {
     }
     isPlaying = !isPlaying;
 };
+
 const rusticaPopup = document.getElementById("rusticaPopup");
 
 rusticaPopup.onclick = function(event) {
