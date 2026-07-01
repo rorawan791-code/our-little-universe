@@ -111,9 +111,10 @@ color:#ffb3d9;
 }
 
 .popup-content img{
-    width:100%;
-    max-height:350px;
-    object-fit:contain;
+    width: 100%;
+    height: auto;
+    max-height: 350px;
+    object-fit: contain;
     border-radius:15px;
     margin-bottom:15px;
 }
