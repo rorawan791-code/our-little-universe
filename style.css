@@ -82,6 +82,17 @@ width:90%;
 max-width:500px;
 }
 
+/* التعديل الوحيد */
+.popup-content img{
+width:100%;
+max-width:300px;
+max-height:300px;
+object-fit:contain;
+display:block;
+margin:0 auto 15px;
+border-radius:15px;
+}
+
 #nextBtn{
 position:fixed;
 bottom:20px;
@@ -92,6 +103,7 @@ border-radius:10px;
 background:#ff9ac5;
 cursor:pointer;
 }
+
 #engagedCountdown,
 #weddingCountdown{
 margin-top:10px;
