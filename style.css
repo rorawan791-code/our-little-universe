@@ -1,73 +1,75 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
-body {
-    font-family: Arial;
-    background: linear-gradient(180deg,#050816,#0b1437,#161d49);
-    color: #fff;
-    text-align: center;
+body{
+font-family:Arial;
+background:linear-gradient(180deg,#050816,#0b1437,#161d49);
+color:#fff;
+text-align:center;
 }
 
-.slide {
-    display: none;
-    min-height: 100vh;
-    justify-content: center;
-    align-items: center;
+.slide{
+display:none;
+min-height:100vh;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+padding:20px;
 }
 
-.container {
-    padding: 30px;
-    background: rgba(255,255,255,0.05);
-    border-radius: 20px;
-    margin: 20px;
+.container{
+padding:30px;
+background:rgba(255,255,255,0.05);
+border-radius:20px;
 }
 
-.time-card, .planet-card, .song-card {
-    margin: 15px auto;
-    padding: 20px;
-    width: 260px;
-    background: rgba(255,255,255,0.08);
-    border-radius: 15px;
+.time-card,.planet-card,.song-card{
+margin:15px auto;
+padding:20px;
+width:260px;
+background:rgba(255,255,255,0.08);
+border-radius:15px;
 }
 
-#love-heart {
-    font-size: 80px;
-    cursor: pointer;
+#love-heart{
+font-size:80px;
+cursor:pointer;
 }
 
-#hidden-star {
-    position: absolute;
-    top: 20%;
-    right: 10%;
-    opacity: 0.5;
-    cursor: pointer;
+.song-img{
+width:180px;
+height:180px;
+object-fit:cover;
+border-radius:15px;
+display:block;
+margin:auto;
 }
 
-.popup {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.8);
-    justify-content: center;
-    align-items: center;
+.popup{
+display:none;
+position:fixed;
+inset:0;
+background:rgba(0,0,0,0.8);
+justify-content:center;
+align-items:center;
 }
 
-.popup-content {
-    background: #111b3b;
-    padding: 20px;
-    border-radius: 15px;
-    width: 80%;
+.popup-content{
+background:#111b3b;
+padding:20px;
+border-radius:15px;
+width:80%;
 }
 
-#nextBtn {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    padding: 10px 15px;
-    background: #ff9ac5;
-    border: none;
-    border-radius: 10px;
+#nextBtn{
+position:fixed;
+bottom:20px;
+right:20px;
+padding:10px 15px;
+background:#ff9ac5;
+border:none;
+border-radius:10px;
 }
