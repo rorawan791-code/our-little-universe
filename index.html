@@ -1,85 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Little Universe ❤️</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Little Universe ❤️</title>
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <div class="slide">
-        <div class="container">
-            <h1>🌌 Our Little Universe ❤️</h1>
-            <p>Every star holds a memory. Every memory leads back to us.</p>
-            <button id="enterBtn">Enter Our Universe</button>
-        </div>
+<!-- SLIDE 1 -->
+<div class="slide">
+    <div class="container">
+        <h1>🌌 Our Little Universe</h1>
+        <p>Every star holds a memory. Every memory leads back to us</p>
+        <button id="enterBtn">Enter our universe</button>
+    </div>
+</div>
+
+<!-- SLIDE 2 -->
+<div class="slide">
+    <h2>Our Time</h2>
+
+    <div class="time-card">
+        <h3>❤️ Engagement</h3>
+        <p id="engaged"></p>
     </div>
 
-    <div class="slide">
-        <section class="our-time">
-            <h2>⏳ Our Time</h2>
-            <div class="time-card">
-                <h3>❤️ Engaged Since</h3>
-                <p>24 January 2025</p>
-            </div>
-            <div class="time-card">
-                <h3>💍 Wedding Day</h3>
-                <p>28 August 2026</p>
-            </div>
-        </section>
+    <div class="time-card">
+        <h3>💍 Wedding</h3>
+        <p id="wedding"></p>
+    </div>
+</div>
+
+<!-- SLIDE 3 -->
+<div class="slide">
+    <div class="love-section">
+        <div id="love-heart">❤️</div>
+        <div id="love-message">Tap the heart…</div>
+    </div>
+</div>
+
+<!-- SLIDE 4 -->
+<div class="slide">
+    <div class="planet-card" id="rusticaBtn">
+        <h3>Planet Rustica</h3>
+        <p>Tap to explore memory</p>
     </div>
 
-    <div class="slide">
-        <section class="love-section">
-            <div id="love-heart">❤️</div>
-            <div id="love-message">Tap the heart…</div>
-            <div id="achievement"></div>
-        </section>
+    <div id="hidden-star">⭐</div>
+</div>
+
+<!-- SLIDE 5 -->
+<div class="slide">
+    <div class="song-card">
+        <img src="song.jpg" class="song-img">
+        <h3>Our Song</h3>
+        <button id="musicBtn">▶ Play</button>
+        <audio id="song" src="song.mp3"></audio>
     </div>
+</div>
 
-    <div class="slide">
-        <section class="planet-section">
-            <h2>🌍 Our Universe</h2>
-            <div class="planet-card" id="rusticaBtn">
-                <h3>🌍 Planet Rustica</h3>
-                <p>Tap to explore memory</p>
-            </div>
-        </section>
-
-        <div id="hidden-star">⭐</div>
+<!-- POPUPS -->
+<div id="secretLetter" class="popup">
+    <div class="popup-content">
+        <span id="closeLetter">✕</span>
+        <p id="letterText"></p>
     </div>
+</div>
 
-    <div class="slide">
-        <section class="music-section">
-            <h2>🎵 Our Song</h2>
-            <div class="song-card">
-                <img src="song.jpg" class="song-img">
-                <h3>🎧 Die With A Smile</h3>
-                <p>Our memory in one song</p>
-                <button id="musicBtn">▶ Play</button>
-                <audio id="song" src="song.mp3"></audio>
-            </div>
-        </section>
+<div id="rusticaPopup" class="popup">
+    <div class="popup-content">
+        <span id="closeRustica">✕</span>
+        <img src="rustica.webp">
     </div>
+</div>
 
-    <button id="nextBtn">Next ➡️</button>
+<!-- NAV -->
+<button id="nextBtn">Next ➡️</button>
 
-    <div id="secretLetter" class="popup">
-        <div class="popup-content">
-            <span id="closeLetter" class="close-popup">✕</span>
-            <p id="letterText"></p>
-        </div>
-    </div>
-
-    <div id="rusticaPopup" class="popup">
-        <div class="popup-content">
-            <span id="closeRustica" class="close-popup">✕</span>
-            <img src="rustica.webp">
-            <h2>☕ Planet Rustica</h2>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
