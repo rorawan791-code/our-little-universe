@@ -2,6 +2,8 @@ let currentSlide = 0;
 const slides = document.querySelectorAll(".slide");
 const nextBtn = document.getElementById("nextBtn");
 
+const starSound = new Audio("magic.mp3");
+
 function showSlide(i){
     slides.forEach(s=>s.style.display="none");
     slides[i].style.display="flex";
@@ -66,6 +68,9 @@ const textBox = document.getElementById("letterText");
 const closeLetter = document.getElementById("closeLetter");
 
 star.onclick = ()=>{
+
+    starSound.currentTime = 0;
+    starSound.play().catch(()=>{});
 
     popup.style.display="flex";
 
