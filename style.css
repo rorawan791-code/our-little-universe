@@ -126,3 +126,42 @@ transition:0.3s;
 opacity:1;
 transform:scale(1.2);
 }
+/* ===== ENDING MESSAGE ===== */
+
+#endingMessage{
+margin-top:25px;
+display:flex;
+justify-content:center;
+}
+
+.ending-cloud{
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(8px);
+-webkit-backdrop-filter:blur(8px);
+border:1px solid rgba(255,255,255,0.15);
+border-radius:30px;
+padding:18px 25px;
+max-width:340px;
+width:90%;
+box-shadow:0 0 20px rgba(255,255,255,0.08);
+animation:floatCloud 3s ease-in-out infinite;
+}
+
+.ending-cloud p{
+color:#ffe6f2;
+font-size:17px;
+line-height:1.8;
+margin:0;
+}
+
+@keyframes floatCloud{
+0%{
+transform:translateY(0px);
+}
+50%{
+transform:translateY(-4px);
+}
+100%{
+transform:translateY(0px);
+}
+}
